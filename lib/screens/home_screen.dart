@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:travel_ui_app/widgets/destination_carousel.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -72,32 +73,7 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(
               height: 20,
             ),
-            Column(
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        const Text(
-                          'Top Destination',
-                          style: TextStyle(
-                              fontSize: 22,
-                              letterSpacing: 1.5,
-                              fontWeight: FontWeight.bold),
-                        ),
-                        Text(
-                          'See all',
-                          style: TextStyle(
-                              color: Theme.of(context).primaryColor,
-                              fontSize: 16,
-                              letterSpacing: 1.0,
-                              fontWeight: FontWeight.w600),
-                        ),
-                      ]),
-                ),
-              ],
-            )
+            const DestinationCarousel()
           ],
         ),
       ),
