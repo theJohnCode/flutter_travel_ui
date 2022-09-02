@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:travel_ui_app/models/activity_model.dart';
 import 'package:travel_ui_app/models/destination_model.dart';
 
 class DestinationScreen extends StatefulWidget {
@@ -11,6 +14,15 @@ class DestinationScreen extends StatefulWidget {
 }
 
 class _DestinationScreenState extends State<DestinationScreen> {
+  buildRatingStar(int rating) {
+    String star = '';
+    for (var i = 0; i < rating; i++) {
+      star += '⭐ ';
+    }
+    star.trim();
+    return Text(star);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -128,6 +140,111 @@ class _DestinationScreenState extends State<DestinationScreen> {
                 ),
               )
             ],
+          ),
+          Expanded(
+            child: ListView.builder(
+                itemCount: widget.destination.activities.length,
+                itemBuilder: (context, index) {
+                  Activity activity = widget.destination.activities[index];
+                  return Stack(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.fromLTRB(40, 5, 20, 5),
+                        height: 170,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.fromLTRB(100, 20, 20, 20),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+                                  Container(
+                                    width: 120,
+                                    child: Text(
+                                      activity.name,
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                      overflow: TextOverflow.ellipsis,
+                                      maxLines: 2,
+                                    ),
+                                  ),
+                                  Column(
+                                    children: [
+                                      Text(
+                                        '\$${activity.price}',
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.w600,
+                                          fontSize: 22,
+                                        ),
+                                      ),
+                                      Text(
+                                        'per pax',
+                                        style: TextStyle(
+                                          color: Colors.grey,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                              Text(
+                                activity.type,
+                                style: TextStyle(
+                                  color: Colors.grey,
+                                ),
+                              ),
+                              buildRatingStar(activity.rating),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Row(
+                                children: <Widget>[
+                                  Container(
+                                    width: 70,
+                                    decoration: BoxDecoration(
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .secondary,
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    alignment: Alignment.center,
+                                    child: Text(
+                                      activity.startTimes[0],
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  Container(
+                                    width: 70,
+                                    decoration: BoxDecoration(
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .secondary,
+                                    ),
+                                    alignment: Alignment.center,
+                                    child: Text(activity.startTimes[1]),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  );
+                }),
           ),
         ],
       ),
