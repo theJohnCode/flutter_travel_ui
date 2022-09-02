@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:travel_ui_app/models/activity_model.dart';
 import 'package:travel_ui_app/models/destination_model.dart';
