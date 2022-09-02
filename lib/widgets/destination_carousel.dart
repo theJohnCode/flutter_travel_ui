@@ -34,7 +34,7 @@ class DestinationCarousel extends StatelessWidget {
                 ),
               ]),
         ),
-        SizedBox(
+        Container(
           height: 300,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
