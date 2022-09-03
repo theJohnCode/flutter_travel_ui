@@ -2,7 +2,7 @@
 
 A simple UI project that shows the different destinations around the area you are travelling to around the world.
  
-Screen     1       |  Screen 2
+Screen     1               |  Screen 2
 :-------------------------:|:-------------------------:
 ![](/assets/first.png)  |  ![](/assets/travel.png)
 
