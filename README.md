@@ -1,16 +1,35 @@
-# travel_ui_app
+# Travel_UI_App
 
-A new Flutter project.
+A simple UI project that shows the different destinations around the area you are travelling to around the world.
+ 
+Screen     1       |  Screen 2
+:-------------------------:|:-------------------------:
+![](/assets/first.png)  |  ![](/assets/travel.png)
 
-## Getting Started
+## How to use
 
-This project is a starting point for a Flutter application.
+**Step 1:**
 
-A few resources to get you started if this is your first Flutter project:
+Download or clone this repo by using the link below:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```
+https://git@github.com:theJohnCode/travel_ui_app.git
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+**Step 2:**
+
+Go to project root and execute the following command in console to get the required dependencies: 
+
+```
+flutter pub get 
+```
+
+**Step 3:**
+Run your App
+
+```
+flutter run
+```
+
+## Note
+Make sure you have flutter fully installed on your machine
